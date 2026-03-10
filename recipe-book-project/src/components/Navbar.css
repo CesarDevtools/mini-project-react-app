@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@800&display=swap');
+
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0b0c0c;
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    margin-right: 70px;
+}
+
+a {
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************/
+/******Logo*****/
+/***************/
+.logo-mymeals {
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+    padding: 10px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.logo-my {
+    font-family: 'Montserrat', sans-serif;
+    color: #3498db;
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+
+.logo-meals {
+    font-family: 'Dancing Script', cursive;
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-left: -8px;
+    line-height: 1;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.logo-meals::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-left: 5px;
+}
