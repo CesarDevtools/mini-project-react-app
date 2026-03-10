@@ -1,5 +1,5 @@
 import "./HomePage.css";
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar';
 import Footer from "../components/Footer";
 
 function HomePage() {
