@@ -1,0 +1,35 @@
+.recipeList-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+	flex-wrap: wrap;
+}
+
+.recipe-container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-color: white;
+	max-width: 350px;
+	max-height: 500px;
+	color: black;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 10px;
+	transition: 0.4s;
+	align-items: center;
+}
+.recipe-container:hover {
+	box-shadow: 0px 6px 12px white;
+	cursor: pointer;
+}
+
+.recipe-container img {
+	width: 200px;
+	height: 150px;
+	border-radius: 10px;
+}
+
+.button-recipes {
+	width: 50%;
+}
