@@ -1,18 +1,33 @@
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import recipes from "./data/recipes.json";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import MealDetails from "./pages/MealDetails";
 
 function App() {
+
+	const [recipesList, setrecipesList] = useState(recipes);
+
+	const deleteRecipe = (ObjId) => {
+		const newList = recipesList.filter((element) => {
+			return element.id !== ObjId;
+		});
+
+		setrecipesList(newList);
+	};
+
+
   return (
     <>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage onDelete={deleteRecipe} recipesArr={recipesList}/>} />
 		<Route path="*" element={<NotFoundPage />} />
 		<Route path="/meals/:mealId" element={<MealDetails />} />
       </Routes>

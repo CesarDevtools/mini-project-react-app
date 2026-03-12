@@ -1,11 +1,16 @@
 import "./HomePage.css";
 import { MealsList } from "../components/MealsList";
 
-function HomePage() {
+function HomePage(props) {
 	return (
-		<>
-			<MealsList />	
-		</>
+		
+		<div className="recipeList-container">
+			{props.recipesArr.map((recipeObj) => {
+				return (
+			<MealsList recipeObj={recipeObj} onDelete={props.onDelete}/>	
+			);
+		})}
+		</div>
 	);
 }
 

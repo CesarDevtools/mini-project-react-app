@@ -1,22 +1,11 @@
-import { useState } from "react";
-import recipes from "../data/recipes.json";
+
 import "./MealsList.css";
 
-export function MealsList() {
-	const [recipesList, setrecipesList] = useState(recipes);
-
-	const deleteRecipe = (ObjId) => {
-		const newList = recipesList.filter((element) => {
-			return element.id !== ObjId;
-		});
-
-		setrecipesList(newList);
-	};
+export function MealsList({recipeObj, onDelete}) {
+	
 
 	return (
-		<div className="recipeList-container">
-			{recipesList.map((recipeObj) => {
-				return (
+		
 					<div key={recipeObj.id} className="recipe-container">
 						<h3>{recipeObj.name}</h3>
 						<img src={recipeObj.image} alt="image recipe" />
@@ -31,19 +20,18 @@ export function MealsList() {
 
 						<button
 							onClick={() => {
-								deleteRecipe(recipeObj.id);
+								onDelete(recipeObj.id);
 							}}
 							className="button-recipes"
 						>
 							Delete
 						</button>
-						
+
 						<button className="button-recipes">
 							Details
 						</button>
 					</div>
-				);
-			})}
-		</div>
+				
+			
 	);
 }
