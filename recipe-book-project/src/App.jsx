@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import MealDetails from "./pages/MealDetails";
+import AboutPage from "./pages/aboutPage";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage onDelete={deleteRecipe} recipesArr={recipesList}/>} />
+		<Route path="/about" element={<AboutPage />} />
 		<Route path="*" element={<NotFoundPage />} />
 		<Route path="/meals/:mealId" element={<MealDetails recipesArr={recipesList}/>} />
       </Routes>
