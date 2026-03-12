@@ -1,7 +1,7 @@
 
-import "./MealsList.css";
+import "./Meals.css";
 
-export function MealsList({recipeObj, onDelete}) {
+export function Meals({recipeObj, onDelete}) {
 	
 
 	return (

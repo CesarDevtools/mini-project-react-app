@@ -1,5 +1,5 @@
 import "./HomePage.css";
-import { MealsList } from "../components/MealsList";
+import { Meals } from "../components/Meals";
 
 function HomePage(props) {
 	return (
@@ -7,7 +7,7 @@ function HomePage(props) {
 		<div className="recipeList-container">
 			{props.recipesArr.map((recipeObj) => {
 				return (
-			<MealsList recipeObj={recipeObj} onDelete={props.onDelete}/>	
+			<Meals recipeObj={recipeObj} onDelete={props.onDelete}/>	
 			);
 		})}
 		</div>
