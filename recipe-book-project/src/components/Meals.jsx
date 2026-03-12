@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import "./Meals.css";
 
 export function Meals({recipeObj, onDelete}) {
@@ -27,9 +28,11 @@ export function Meals({recipeObj, onDelete}) {
 							Delete
 						</button>
 
+						<Link to={`/meals/${recipeObj.id}`}>
 						<button className="button-recipes">
 							Details
 						</button>
+						</Link>
 					</div>
 				
 			

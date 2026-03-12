@@ -1,14 +1,23 @@
+import { useParams } from 'react-router-dom'
 
+function MealDetails(props) {
 
-function MealDetails() {
+  console.log(props.recipesArr);
+  
+  const { mealId } = useParams()
 
-   
+  const meal = props.recipesArr.find((mealObj) => {
+    return mealObj.id === mealId
+  })
 
+  console.log(meal);
+  
   return (
     <div>
-        
+      
     </div>
   )
 }
 
 export default MealDetails
+

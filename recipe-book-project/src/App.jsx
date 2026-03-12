@@ -29,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage onDelete={deleteRecipe} recipesArr={recipesList}/>} />
 		<Route path="*" element={<NotFoundPage />} />
-		<Route path="/meals/:mealId" element={<MealDetails />} />
+		<Route path="/meals/:mealId" element={<MealDetails recipesArr={recipesList}/>} />
       </Routes>
 
       <Footer />
