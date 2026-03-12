@@ -37,6 +37,10 @@ export function MealsList() {
 						>
 							Delete
 						</button>
+						
+						<button className="button-recipes">
+							Details
+						</button>
 					</div>
 				);
 			})}
