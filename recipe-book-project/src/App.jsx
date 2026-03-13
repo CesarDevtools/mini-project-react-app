@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import recipes from "./data/recipes.json";
@@ -11,8 +13,16 @@ import MealDetails from "./pages/MealDetails";
 import AboutPage from "./pages/aboutPage";
 
 function App() {
-
 	const [recipesList, setrecipesList] = useState(recipes);
+
+	const createMeal = (newMealDetails) => {
+		const newId = uuidv4();
+
+		const newMeal = { ...newMealDetails, newId };
+		const newList = [newMeal, ...recipesList];
+
+		setrecipesList(newList);
+	};
 
 	const deleteRecipe = (ObjId) => {
 		const newList = recipesList.filter((element) => {
@@ -22,21 +32,32 @@ function App() {
 		setrecipesList(newList);
 	};
 
+	return (
+		<>
+			<Navbar />
 
-  return (
-    <>
-      <Navbar />
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<HomePage
+							onDelete={deleteRecipe}
+							recipesArr={recipesList}
+							onCreate={createMeal}
+						/>
+					}
+				/>
+				<Route path="/about" element={<AboutPage />} />
+				<Route path="*" element={<NotFoundPage />} />
+				<Route
+					path="/meals/:mealId"
+					element={<MealDetails recipesArr={recipesList} />}
+				/>
+			</Routes>
 
-      <Routes>
-        <Route path="/" element={<HomePage onDelete={deleteRecipe} recipesArr={recipesList}/>} />
-		<Route path="/about" element={<AboutPage />} />
-		<Route path="*" element={<NotFoundPage />} />
-		<Route path="/meals/:mealId" element={<MealDetails recipesArr={recipesList}/>} />
-      </Routes>
-
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 }
 
 export default App;
