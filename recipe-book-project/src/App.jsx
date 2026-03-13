@@ -25,6 +25,18 @@ function App() {
 		setrecipesList(newList);
 	};
 
+	const editMeal = (editMealDetails) => {
+		// alternative:^arr.map()
+
+		const filteredList = recipesList.filter((meal) => {
+			return meal.id !== editMealDetails.id;
+		});
+
+		const newList = [editMealDetails, ...filteredList];
+
+		setrecipesList(newList);
+	};
+
 	const deleteRecipe = (ObjId) => {
 		const newList = recipesList.filter((element) => {
 			return element.id !== ObjId;
@@ -49,15 +61,15 @@ function App() {
 					}
 				/>
 				<Route path="/about" element={<AboutPage />} />
-				<Route path="*" element={<NotFoundPage />} />
 				<Route
 					path="/meals/:mealId"
 					element={<MealDetails recipesArr={recipesList} />}
 				/>
 				<Route
 					path="/editMeal/:mealId"
-					element={<EditMealPage recipesArr={recipesList} />}
+					element={<EditMealPage recipesArr={recipesList} onEdit={editMeal} />}
 				/>
+				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 
 			<Footer />
