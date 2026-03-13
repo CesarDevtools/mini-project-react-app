@@ -11,6 +11,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import MealDetails from "./pages/MealDetails";
 import AboutPage from "./pages/aboutPage";
+import EditMealPage from "./pages/EditMealPage";
 
 function App() {
 	const [recipesList, setrecipesList] = useState(recipes);
@@ -52,6 +53,10 @@ function App() {
 				<Route
 					path="/meals/:mealId"
 					element={<MealDetails recipesArr={recipesList} />}
+				/>
+				<Route
+					path="/editMeal/:mealId"
+					element={<EditMealPage recipesArr={recipesList} />}
 				/>
 			</Routes>
 
