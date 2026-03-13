@@ -5,7 +5,7 @@ import { Form } from "../components/Form";
 function HomePage(props) {
 	return (
 		<>
-			<Form onCreate={props.onCreate} key={2} />
+			<Form onCreate={props.onCreate} />
 			<div className="recipeList-container">
 				{props.recipesArr.map((recipeObj) => {
 					return (
