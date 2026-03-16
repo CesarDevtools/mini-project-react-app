@@ -22,7 +22,7 @@ export function Form(props) {
 
 	return (
 		<div className="form-container">
-			<h1>this is Form</h1>
+			<h1>Create a meal</h1>
 			<form onSubmit={handleSubmit}>
 				<label>
 					{" "}
