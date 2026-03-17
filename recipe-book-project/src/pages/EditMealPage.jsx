@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./EditMealPage.css";
 
 function EditMealPage(props) {
 	const { mealId } = useParams();
+	const navigate = useNavigate();
 
 	const currentMeal = props.recipesArr.find((mealObj) => {
 		return mealObj.id === mealId;
@@ -26,6 +27,7 @@ function EditMealPage(props) {
 		};
 
 		props.onEdit(newMeal);
+		navigate("/");
 	};
 
 	return (
