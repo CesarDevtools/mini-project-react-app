@@ -1,0 +1,143 @@
+.details-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); 
+    padding: 40px;
+    margin-top: 100px; 
+    background-color: #242424; 
+}
+
+.meal-details-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: #2d3436;
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden; 
+}
+
+@media (min-width: 768px) {
+    .meal-details-card {
+        flex-direction: row; 
+        min-height: 550px;
+    }
+}
+
+.meal-image-section {
+    flex: 1.2; 
+    min-height: 300px; 
+}
+
+@media (min-width: 768px) {
+    .meal-image-section {
+        min-height: auto;
+    }
+}
+
+.meal-image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.meal-content-section {
+    flex: 1; 
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.meal-content-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #2d3436;
+    margin-top: 0;
+}
+
+.meal-stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background-color: #f1f2f6; 
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2ecc71; 
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #636e72;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meal-description {
+    line-height: 1.8;
+    color: #636e72;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.details-card a {
+    text-decoration: none;
+}
+
+.button-recipes {
+    min-width: 220px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2ecc71;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-recipes:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.error-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.error-card h1 {
+    font-size: 2.2rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.error-card p {
+    color: #636e72;
+    margin-bottom: 30px;
+}
