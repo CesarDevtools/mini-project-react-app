@@ -22,11 +22,7 @@ export function Meal({ recipeObj, onDelete }) {
 
         <Link to={`/meals/${recipeObj.id}`}>
           <button className="button-recipes">Details</button>
-        </Link>
-
-        <Link to={`/editMeal/${recipeObj.id}`}>
-          <button className="button-recipes">Edit meal</button>
-        </Link>      
+        </Link>    
     </div>
   );
 }

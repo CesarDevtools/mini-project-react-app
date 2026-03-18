@@ -1,10 +1,10 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState } from "react";
-import "./EditMealPage.css";
+import "./EditMealMenu.css";
 
 function EditMealPage(props) {
 	const { mealId } = useParams();
-	const navigate = useNavigate();
+	
 
 	const currentMeal = props.recipesArr.find((mealObj) => {
 		return mealObj.id === mealId;
@@ -27,7 +27,7 @@ function EditMealPage(props) {
 		};
 
 		props.onEdit(newMeal);
-		navigate("/");
+		
 	};
 
 	return (
@@ -85,7 +85,7 @@ function EditMealPage(props) {
 						placeholder="number of servings"
 					/>
 				</label>
-				<button>Create Meal</button>
+				<button>Edit Meal</button>
 			</form>
 		</div>
 	);

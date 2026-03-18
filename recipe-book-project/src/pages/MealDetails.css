@@ -1,10 +1,9 @@
 .details-page-wrapper {
+    padding: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 100px); 
-    padding: 40px;
-    margin-top: 100px; 
+    margin-top: 80px; 
     background-color: #242424; 
 }
 

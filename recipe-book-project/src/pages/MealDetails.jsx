@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import "./MealDetails.css";
+import EditMealPage from "../components/EditMealMenu";
 
 function MealDetails(props) {
     const { mealId } = useParams();
@@ -23,6 +24,9 @@ function MealDetails(props) {
     }
 
     return (
+        <>
+        <EditMealPage onEdit={props.onEdit} recipesArr={props.recipesArr}/>
+
         <div className="details-page-wrapper">
             <div className="meal-details-card">
                 <div className="meal-image-section">
@@ -57,6 +61,7 @@ function MealDetails(props) {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
