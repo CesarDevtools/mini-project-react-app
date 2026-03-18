@@ -1,63 +1,137 @@
+/* Contenedor principal de la carta */
 .recipeList-container {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-top: 100px;
+    margin-top: 50px;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
+    margin-bottom: 50px;
 }
 
 .recipe-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     background-color: #ffffff;
-    width: 100%;
-    max-width: 320px;
-    min-height: 520px;
-    color: #2d3436;
-    padding: 20px;
+    width: 400px; /* Ancho fijo para evitar que se rompa */
+    min-height: 500px;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Importante para que la imagen no se salga de las esquinas redondeadas */
+    margin: 10px;
 }
 
 .recipe-container:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen y Badge */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
 }
 
 .recipe-container img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    border-radius: 20px;
 }
 
-.recipe-container a {
-    width: 90%;
-    text-decoration: none;
-}
-
-.button-recipes {
-    width: 90%; 
-    padding: 10px;
-    margin: 5px 0;
-    border: none;
-    border-radius: 8px;
-    background-color: #2ecc71;
+.calorie-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
     color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    z-index: 1;
+}
+.calorie-badge.low { background-color: #2ecc71; }
+.calorie-badge.high { background-color: #e67e22; }
+
+/* Cuerpo de la carta */
+.recipe-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja los botones hacia abajo */
+    justify-content: space-between;
 }
 
-.recipe-container a .button-recipes {
+.recipe-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+    color: #2d3436;
+    text-align: center;
+}
+
+/* La sección de las calorías y servings */
+.recipe-stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f2f6;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #636e72;
+}
+
+.stat-value {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Botones */
+.recipe-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     width: 100%;
 }
 
-.button-recipes:hover {
-    background-color: #27ae60;
+.button-recipes {
+    width: 100%; /* Ahora ocupan el 100% de su contenedor padre */
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-details {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.btn-delete {
+    background-color: white;
+    color: #ff7675;
+    border: 1px solid #ff7675;
+}
+
+.btn-delete:hover {
+    background-color: #ff7675;
+    color: white;
+}
+
+/* Ajuste para el Link de React Router */
+.details-link {
+    text-decoration: none;
+    width: 100%;
 }
