@@ -11,23 +11,20 @@ import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import MealDetails from "./pages/MealDetails";
 import AboutPage from "./pages/aboutPage";
-import EditMealPage from "./components/EditMealMenu";
 
 function App() {
 	const [recipesList, setrecipesList] = useState(recipes);
 
 	const createMeal = (newMealDetails) => {
-		const newId = uuidv4();
+		const id = uuidv4();
 
-		const newMeal = { ...newMealDetails, newId };
+		const newMeal = { ...newMealDetails, id };
 		const newList = [newMeal, ...recipesList];
 
-		setrecipesList(newList);
+		setrecipesList(newList);	
 	};
 
 	const editMeal = (editMealDetails) => {
-		// alternative:^arr.map()
-
 		const filteredList = recipesList.filter((meal) => {
 			return meal.id !== editMealDetails.id;
 		});
